@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imc/blocs/imc.bloc.dart';
 import 'package:imc/blocs/valores.mask.dart';
-import 'package:imc/widget/flat.button.style.dart';
+import 'package:imc/widget/util.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
               ),
               controller: bloc.heightCtrl,
               keyboardType: TextInputType.number,
-              inputFormatters: [ValoresMask()],
+              inputFormatters: [ValoresMask(), maskFormatter],
             ),
           ),
           Padding(
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               ),
               keyboardType: TextInputType.number,
               controller: bloc.weightCtrl,
-              inputFormatters: [ValoresMask()],
+              inputFormatters: [maskFormatter],
             ),
           ),
           Padding(
